@@ -1,0 +1,21 @@
+const {
+  PORT,
+  S3_BUCKET,
+  DATABASE_URL,
+  SECRET_KEY,
+  SECRET_HASH,
+  OPEN_AI_KEY,
+  SUGGESTION_URL,
+  JWT_SECRET,
+} = process.env;
+
+export const CONFIG = {
+  PORT,
+  S3_BUCKET,
+  DATABASE_URL,
+  SECRET_KEY,
+  SECRET_HASH,
+  OPEN_AI_KEY,
+  SUGGESTION_URL,
+  JWT_SECRET,
+};
