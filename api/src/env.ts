@@ -9,7 +9,7 @@ const {
   JWT_SECRET,
 } = process.env;
 
-export const CONFIG = {
+export const env = {
   PORT,
   S3_BUCKET,
   DATABASE_URL,

@@ -1,5 +1,5 @@
 import express from 'express';
-import { CONFIG } from './config.js';
+import { env } from './env.ts';
 
 const app = express();
 
@@ -10,11 +10,11 @@ app.get('/api', (req, res) => {
 });
 
 // prettier-ignore
-app.listen(CONFIG.PORT || 3001, () => {
+app.listen(env.PORT, () => {
   console.log('\x1b[1;32m%s\x1b[0m', '┌──────────────────────────────────────────────────────────┐');
   console.log('\x1b[1;32m%s\x1b[0m', '│         RUNNING REAL WORLD API SERVER                    │');
   console.log('\x1b[1;32m%s\x1b[0m', '└──────────────────────────────────────────────────────────┘');
   console.log('\x1b[1;32m%s\x1b[0m', '┌──────────────────────────────────────────────────────────┐');
-  console.log('\x1b[32m%s\x1b[0m',   `│         API:  http://localhost:${CONFIG.PORT}/api        │`);
+  console.log('\x1b[32m%s\x1b[0m',   `│         API:  http://localhost:${env.PORT}/api           │`);
   console.log('\x1b[1;32m%s\x1b[0m', '└──────────────────────────────────────────────────────────┘');
 });
