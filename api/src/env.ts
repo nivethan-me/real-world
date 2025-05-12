@@ -1,21 +1,8 @@
-const {
-  PORT,
-  S3_BUCKET,
-  DATABASE_URL,
-  SECRET_KEY,
-  SECRET_HASH,
-  OPEN_AI_KEY,
-  SUGGESTION_URL,
-  JWT_SECRET,
-} = process.env;
+import { z } from 'zod';
 
-export const env = {
-  PORT,
-  S3_BUCKET,
-  DATABASE_URL,
-  SECRET_KEY,
-  SECRET_HASH,
-  OPEN_AI_KEY,
-  SUGGESTION_URL,
-  JWT_SECRET,
-};
+const envSchema = z.object({
+  PORT: z.coerce.number().min(1000),
+  DATABASE_URL: z.string(),
+});
+
+export const env = envSchema.parse(process.env);
