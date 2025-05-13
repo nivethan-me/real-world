@@ -1,12 +1,27 @@
-import express from 'express';
+import express, {
+  type NextFunction,
+  type Request,
+  type Response,
+} from 'express';
+import { RouteError } from './common/route-error.ts';
 import { env } from './env.ts';
+import { usersRouter } from './users/users.route.ts';
 
 const app = express();
 
 app.use(express.json());
 
-app.get('/api', (req, res) => {
+app.use('/api/users', usersRouter);
+
+app.get('/api', (_: Request, res: Response) => {
   res.send(`Welcome to the Real World API! ${process.env.PORT}`);
+});
+
+app.use((err: Error, _: Request, res: Response, next: NextFunction) => {
+  if (err instanceof RouteError) {
+    res.status(err.status).json({ error: err.message });
+  }
+  return next(err);
 });
 
 // prettier-ignore
