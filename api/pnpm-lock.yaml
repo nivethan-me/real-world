@@ -30,6 +30,9 @@ importers:
       npm-run-all:
         specifier: ^4.1.5
         version: 4.1.5
+      postgres-shift:
+        specifier: ^0.1.0
+        version: 0.1.0
       typescript:
         specifier: ^5.8.3
         version: 5.8.3
@@ -697,6 +700,9 @@ packages:
   possible-typed-array-names@1.1.0:
     resolution: {integrity: sha512-/+5VFTchJDoVj3bhoqi6UeymcD00DAwb1nJwamzPvHEszJ4FpF6SNNbUbOS8yI56qHzdV8eK0qEfOSiodkTdxg==}
     engines: {node: '>= 0.4'}
+
+  postgres-shift@0.1.0:
+    resolution: {integrity: sha512-/375iG0Kveh1Spk3kFtaTdGT9FUxtXYDDabGw/9/Jkk3f93dYM2R8ZgQzbknCG+ZpfoR114gZ71oR+lRr6XY3A==}
 
   postgres@3.4.5:
     resolution: {integrity: sha512-cDWgoah1Gez9rN3H4165peY9qfpEo+SA61oQv65O3cRUE1pOEoJWwddwcqKE8XZYjbblOJlYDlLV4h67HrEVDg==}
@@ -1661,6 +1667,8 @@ snapshots:
   pify@3.0.0: {}
 
   possible-typed-array-names@1.1.0: {}
+
+  postgres-shift@0.1.0: {}
 
   postgres@3.4.5: {}
 
